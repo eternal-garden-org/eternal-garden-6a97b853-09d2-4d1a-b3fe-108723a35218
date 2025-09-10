@@ -51,10 +51,7 @@ export function MemorialHeader({
         <div className="flex flex-col lg:flex-row items-stretch gap-8 min-h-[480px]">
           {/* Photo */}
           <div className="flex-shrink-0">
-            <div 
-              className="relative w-full lg:w-[480px] h-[480px] overflow-hidden"
-              style={{ borderRadius: '8px' }}
-            >
+            <div className="relative w-full lg:w-[480px] h-[480px] overflow-hidden rounded-lg">
               <Image
                 src={photoUrl}
                 alt={`Фото ${fullName}`}
@@ -99,8 +96,8 @@ export function MemorialHeader({
                 </div>
                 <span className="text-white text-[20px] font-bold">–</span>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-[#8B8B8G] font-light text-[20px]">{deathYear}</span>
-                  <span className="text-white font-bold text-[20px] ml-1">{deathDayMonth}</span>
+                  <span className="text-white font-bold text-[20px]">{deathYear}</span>
+                  <span className="text-[#8B8B8B] font-light text-[20px] ml-1">{deathDayMonth}</span>
                 </div>
               </div>
             </div>
@@ -109,8 +106,8 @@ export function MemorialHeader({
             <div className="space-y-4 mt-8">
               {/* Birth place */}
               <div className="space-y-1">
-                <div className="flex items-center text-[#8B8B8G] text-[14px]">
-                  <MapPin size={16} className="text-[#8B8B8G] mr-2" />
+                <div className="flex items-center text-[#8B8B8B] text-[14px]">
+                  <MapPin size={16} className="text-[#8B8B8B] mr-2" />
                   Место рождения
                 </div>
                 <Typography.P className="text-white text-[20px] font-bold" style={{ margin: 0 }}>
@@ -120,8 +117,8 @@ export function MemorialHeader({
 
               {/* Death place */}
               <div className="space-y-1">
-                <div className="flex items-center text-[#8B8B8G] text-[14px]">
-                  <MapPin size={16} className="text-[#8B8B8G] mr-2" />
+                <div className="flex items-center text-[#8B8B8B] text-[14px]">
+                  <MapPin size={16} className="text-[#8B8B8B] mr-2" />
                   Место смерти
                 </div>
                 <Typography.P className="text-white text-[20px] font-bold" style={{ margin: 0 }}>

@@ -6,6 +6,7 @@ import { MemorialBio } from "@/components/memorial-bio";
 import { MemorialPhotos } from "@/components/memorial-photos";
 import { MemorialQuotes } from "@/components/memorial-quotes";
 import { MemorialMedia } from "@/components/memorial-media";
+import { CustomAudioPlayer } from "@/components/custom-audio-player";
 import { MemorialWords } from "@/components/memorial-words";
 import { MemorialContacts } from "@/components/memorial-contacts";
 import { Footer } from "@/components/footer";
@@ -29,6 +30,7 @@ export default function Home() {
       <MemorialQuotes />
       <Container>
         <MemorialMedia />
+        <CustomAudioPlayer />
         <MemorialWords />
         <MemorialContacts />
       </Container>

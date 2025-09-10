@@ -79,70 +79,72 @@ export function MemorialWords({ className }: MemorialWordsProps) {
         </Typography.H2>
       </div>
 
-      <Carousel
-        opts={{
-          align: "start",
-          loop: true,
-        }}
-        setApi={setApi}
-        className="w-full mx-auto"
-      >
-        <CarouselContent>
-          {wordsData.map((word) => (
-            <CarouselItem key={word.id} className="basis-full">
-              <div className="max-w-4xl mx-auto">
-                <div className="border border-[#2D2D2D] rounded-lg p-8 bg-transparent">
-                  {/* Author info - moved before text */}
-                  <div className="flex items-center gap-4 mb-6">
-                    <Avatar className="w-11 h-11 rounded-full overflow-hidden flex-shrink-0">
-                      <AvatarImage
-                        src={word.author.avatar}
-                        alt={word.author.name}
-                        className="object-cover w-full h-full"
-                      />
-                      <AvatarFallback>
-                        {word.author.name
-                          .split(" ")
-                          .map((name) => name[0])
-                          .join("")}
-                      </AvatarFallback>
-                    </Avatar>
+      <div className="w-full">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          setApi={setApi}
+          className="w-full mx-auto"
+        >
+          <CarouselContent>
+            {wordsData.map((word) => (
+              <CarouselItem key={word.id} className="basis-full">
+                <div className="w-full">
+                  <div className="border border-[#2D2D2D] rounded-lg p-8 bg-transparent">
+                    {/* Author info - moved before text */}
+                    <div className="flex items-center gap-4 mb-6">
+                      <Avatar className="w-11 h-11 rounded-full overflow-hidden flex-shrink-0">
+                        <AvatarImage
+                          src={word.author.avatar}
+                          alt={word.author.name}
+                          className="object-cover w-full h-full"
+                        />
+                        <AvatarFallback>
+                          {word.author.name
+                            .split(" ")
+                            .map((name) => name[0])
+                            .join("")}
+                        </AvatarFallback>
+                      </Avatar>
 
-                    <div className="flex flex-col justify-between h-11">
-                      <Typography.H3 className="text-white text-[20px] font-normal leading-tight">
-                        {word.author.name}
-                      </Typography.H3>
-                      <Typography.P className="text-[#8B8B8G] text-[16px] leading-tight" style={{ margin: 0 }}>
-                        {word.author.relation}
-                      </Typography.P>
+                      <div className="flex flex-col justify-between h-11">
+                        <Typography.H3 className="text-white text-[20px] font-normal leading-tight">
+                          {word.author.name}
+                        </Typography.H3>
+                        <Typography.P className="text-[#8B8B8B] text-[16px] leading-tight" style={{ margin: 0 }}>
+                          {word.author.relation}
+                        </Typography.P>
+                      </div>
                     </div>
+
+                    <Typography.P className="text-white text-[20px] leading-relaxed" style={{ margin: 0 }}>
+                      {word.text}
+                    </Typography.P>
                   </div>
-
-                  <Typography.P className="text-white text-[20px] leading-relaxed" style={{ margin: 0 }}>
-                    {word.text}
-                  </Typography.P>
                 </div>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
 
-      {/* Navigation dots at the bottom */}
-      <div className="mt-8 flex justify-center">
-        <div className="flex gap-2">
-          {Array.from({ length: count }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => api?.scrollTo(index)}
-              className={cn(
-                "rounded-full transition-all duration-300 border-none",
-                index === current
-                  ? "w-3 h-3 bg-[#F6B95A]"
-                  : "w-2 h-2 bg-[#2D2D2D] hover:bg-[#F6B95A]/60"
-              )}
-            />
-          ))}
+        {/* Navigation dots at the bottom */}
+        <div className="mt-8 flex justify-center">
+          <div className="flex gap-2">
+            {Array.from({ length: count }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => api?.scrollTo(index)}
+                className={cn(
+                  "rounded-full transition-all duration-300 border-none",
+                  index === current
+                    ? "w-3 h-3 bg-[#F6B95A]"
+                    : "w-2 h-2 bg-[#2D2D2D] hover:bg-[#F6B95A]/60"
+                )}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

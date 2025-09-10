@@ -36,27 +36,26 @@ export function MemorialContacts({ className }: MemorialContactsProps) {
         {contactsData.map((contact) => (
           <div
             key={contact.id}
-            className="rounded-lg p-6 shadow-md opacity-80"
+            className="rounded-lg p-6 shadow-md"
             style={{
               backgroundColor: '#2D2D2D',
               backgroundImage: `url("http://127.0.0.1:54331/storage/v1/object/public/memorial-media/memorials/6a97b853-09d2-4d1a-b3fe-108723a35218/photo/1757474699336_bg_card_pattern_3.png")`,
               backgroundSize: 'cover',
-              backgroundPosition: 'center'
+              backgroundPosition: 'center',
+              opacity: '0.8'
             }}
           >
-            <div className="space-y-4 text-left">
-              <div className="space-y-1">
-                <Typography.P className="text-[#8B8B8G] text-[12px]" style={{ margin: 0 }}>
-                  {contact.relation}
-                </Typography.P>
-                <Typography.H3 className="text-white text-[16px] font-bold">
-                  {contact.name}
-                </Typography.H3>
-              </div>
+            <div className="space-y-1 text-left">
+              <Typography.P className="text-[#8B8B8B] text-[12px]" style={{ margin: 0 }}>
+                {contact.relation}
+              </Typography.P>
+              <Typography.H3 className="text-white text-[16px] font-bold" style={{ marginBottom: '16px' }}>
+                {contact.name}
+              </Typography.H3>
 
-              <div className="pt-2 space-y-3">
+              <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-[#8B8B8G]" />
+                  <Phone className="w-5 h-5 text-[#8B8B8B]" />
                   <a
                     href={`tel:${contact.phone.replace(/\D/g, "")}`}
                     className="text-white text-[16px] hover:text-[#F6B95A] transition-colors"
@@ -67,7 +66,7 @@ export function MemorialContacts({ className }: MemorialContactsProps) {
 
                 {contact.email && (
                   <div className="flex items-center gap-3">
-                    <Mail className="w-5 h-5 text-[#8B8B8G]" />
+                    <Mail className="w-5 h-5 text-[#8B8B8B]" />
                     <a
                       href={`mailto:${contact.email}`}
                       className="text-white text-[16px] hover:text-[#F6B95A] transition-colors"

@@ -79,12 +79,13 @@ export function MemorialQuotes({ className }: MemorialQuotesProps) {
                 </div>
 
                 <div
-                  className="relative p-8 md:p-12 rounded-lg shadow-lg mx-4 opacity-80"
+                  className="relative p-8 md:p-12 rounded-lg shadow-lg mx-4"
                   style={{
                     backgroundColor: '#2D2D2D',
                     backgroundImage: `url("http://127.0.0.1:54331/storage/v1/object/public/memorial-media/memorials/6a97b853-09d2-4d1a-b3fe-108723a35218/photo/1757474699336_bg_card_pattern_3.png")`,
                     backgroundSize: 'cover',
-                    backgroundPosition: 'center'
+                    backgroundPosition: 'center',
+                    opacity: '0.8'
                   }}
                 >
                   {/* Left quote - positioned at top left, half outside */}

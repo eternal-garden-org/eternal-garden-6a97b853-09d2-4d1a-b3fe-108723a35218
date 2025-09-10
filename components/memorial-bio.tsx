@@ -56,11 +56,11 @@ export function MemorialBio({ className }: MemorialBioProps) {
               <Typography.H3 className="text-white text-[20px] font-bold text-left">
                 {section.title}
               </Typography.H3>
-              <ChevronDown className="h-4 w-4 text-[#8B8B8G] shrink-0 transition-transform duration-200" />
+              <ChevronDown className="h-4 w-4 text-[#8B8B8B] shrink-0 transition-transform duration-200" />
             </AccordionTrigger>
             <AccordionContent className="pt-4 pb-2">
               <Typography.P 
-                className="text-[#8B8B8G] text-[16px] leading-relaxed"
+                className="text-[#8B8B8B] text-[16px] leading-relaxed"
                 style={{ margin: 0 }}
               >
                 {section.content}
