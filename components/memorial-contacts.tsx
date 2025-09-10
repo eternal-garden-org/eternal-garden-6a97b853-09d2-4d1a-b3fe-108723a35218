@@ -1,5 +1,6 @@
 import { Phone, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Typography } from "@/components/ui/typography";
 
 interface MemorialContactsProps {
   className?: string;
@@ -16,38 +17,49 @@ const contactsData = [
   },
   {
     id: "2",
-    name: "Полина",
+    name: "Елена Карпук",
     relation: "Дочь",
-    phone: "+375 (29) 123-45-67",
+    phone: "+375 (29) 987-65-43",
   },
 ];
 
 export function MemorialContacts({ className }: MemorialContactsProps) {
   return (
     <div className={cn("w-full py-16", className)}>
-      <h2 className="text-4xl font-medium mb-10">Контакты родственников</h2>
+      <div className="text-center mb-10">
+        <Typography.H2 className="text-white text-[40px] font-bold">
+          Контакты
+        </Typography.H2>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
         {contactsData.map((contact) => (
           <div
             key={contact.id}
-            className="min-w-[375px] rounded-lg p-10 shadow-md bg-[#021010]"
-            style={{ maxWidth: "450px" }}
+            className="rounded-lg p-6 shadow-md opacity-80"
+            style={{
+              backgroundColor: '#2D2D2D',
+              backgroundImage: `url("http://127.0.0.1:54331/storage/v1/object/public/memorial-media/memorials/6a97b853-09d2-4d1a-b3fe-108723a35218/photo/1757474699336_bg_card_pattern_3.png")`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
           >
-            <div className="space-y-4">
+            <div className="space-y-4 text-left">
               <div className="space-y-1">
-                <h3 className="text-xl font-medium text-foreground">
+                <Typography.P className="text-[#8B8B8G] text-[12px]" style={{ margin: 0 }}>
+                  {contact.relation}
+                </Typography.P>
+                <Typography.H3 className="text-white text-[16px] font-bold">
                   {contact.name}
-                </h3>
-                <p className="text-muted-foreground">{contact.relation}</p>
+                </Typography.H3>
               </div>
 
               <div className="pt-2 space-y-3">
                 <div className="flex items-center gap-3">
-                  <Phone className="size-5 text-muted-foreground" />
+                  <Phone className="w-5 h-5 text-[#8B8B8G]" />
                   <a
                     href={`tel:${contact.phone.replace(/\D/g, "")}`}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-white text-[16px] hover:text-[#F6B95A] transition-colors"
                   >
                     {contact.phone}
                   </a>
@@ -55,10 +67,10 @@ export function MemorialContacts({ className }: MemorialContactsProps) {
 
                 {contact.email && (
                   <div className="flex items-center gap-3">
-                    <Mail className="size-5 text-muted-foreground" />
+                    <Mail className="w-5 h-5 text-[#8B8B8G]" />
                     <a
                       href={`mailto:${contact.email}`}
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-white text-[16px] hover:text-[#F6B95A] transition-colors"
                     >
                       {contact.email}
                     </a>
